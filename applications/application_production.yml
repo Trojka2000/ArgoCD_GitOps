@@ -20,7 +20,7 @@ spec:
       - CreateNamespace=true
     automated:
       selfHeal: true
-       prune: true' > production-people-api.yml
+       prune: true" > production-people-api.yml
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           git add production-people-api.yml
