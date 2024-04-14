@@ -1,6 +1,3 @@
-- name: Erstelle und pushe Änderungen zur GitOps-Repository
-  run: |
-    cat <<EOF > production-people-api.yml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -24,19 +21,3 @@ spec:
     automated:
       selfHeal: true
       prune: true
-EOF
-
-    git config --global user.email "github-actions@github.com"
-    git config --global user.name "github-actions"
-    git add production-people-api.yml
-    git commit --allow-empty -m "Update production-people-api.yml"
-    git push
-
-- name: Erstelle Pull Request
-  uses: peter-evans/create-pull-request@v3
-  with:
-    token: ${{ secrets.GITHUB_TOKEN }}
-    title: Update production-people-api.yml
-    body: |
-      Dieser Pull Request enthält Aktualisierungen für das Produktions-Deployment.
-      Bitte überprüfen und zusammenführen, wenn alles gut aussieht.
