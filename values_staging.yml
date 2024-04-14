@@ -1,5 +1,5 @@
 replicas: 1
 image:
   repository: trojka2000/spring
-  tag: 2.0.3
+  tag: 2.0.5
 environment: staging
