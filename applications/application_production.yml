@@ -20,4 +20,19 @@ spec:
       - CreateNamespace=true
     automated:
       selfHeal: true
-      prune: true
+       prune: true" > production-people-api.yml
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          git add production-people-api.yml
+          git commit --allow-empty -m "Update production-people-api.yml"
+          git push
+
+      # Erstelle den Pull Request
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Update production-people-api.yml
+          body: |
+            This Pull Request contains updates for production deployment.
+            Please review and merge if everything looks good.
