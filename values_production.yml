@@ -1,5 +1,5 @@
 replicas: 3
 image:
   repository: trojka2000/spring
-  tag: 3.1.0
+  tag: 3.2.9
 environment: production
